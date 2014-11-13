@@ -12,16 +12,10 @@ and open the template in the editor.
     <body>
         <?php
         
-//        phpinfo();        
-        include 'testDB.php';
+        // New repo nasfjh Eminem slushame s Murad
         
-//        $DB = testDB::getInstance();                
-//        $connect = $DB->connect('localhost', 'root', '1111', 'dictionary');
         
-        $mysqli = new mysqli('localhost', 'root', '1111', 'dictionary');
         
-            
-            $group = $mysqli->query('SELECT * FROM groups');                 
             $groupArray = array();
             while( $row = $group->fetch_assoc()) {
                 $groupArray[] = $row;
