@@ -28,9 +28,9 @@ class testDB {
     public function connect($host, $user, $password, $database) {   
        $mysqlCon = mysqli_connect($host, $user, $password, $database);
         if($mysqlCon) {
-            var_dump(self::$instance);
+            return true;
         } else {
-            echo 'Connected Failed.';
+            return false;
         }
     }  
 }

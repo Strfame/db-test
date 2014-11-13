@@ -15,10 +15,20 @@ and open the template in the editor.
 //        phpinfo();        
         include 'testDB.php';
         
-        $DB = testDB::getInstance();                
-        $DB->connect('localhost', 'root', '1111', 'dictionary');
-                
+//        $DB = testDB::getInstance();                
+//        $connect = $DB->connect('localhost', 'root', '1111', 'dictionary');
         
+        $mysqli = new mysqli('localhost', 'root', '1111', 'dictionary');
+        
+            
+            $group = $mysqli->query('SELECT * FROM groups');                 
+            $groupArray = array();
+            while( $row = $group->fetch_assoc()) {
+                $groupArray[] = $row;
+            }
+                        
+            echo json_encode($groupArray);
+       
         ?>
     </body>
 </html>
